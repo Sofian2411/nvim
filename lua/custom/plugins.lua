@@ -19,6 +19,9 @@ local plugins = {
         end
     },
     {
+        "github/copilot.vim"
+    },
+    {
         "jay-babu/mason-nvim-dap.nvim",
         event = "VeryLazy",
         dependencies = {
@@ -44,10 +47,15 @@ local plugins = {
     },
     {
         "neovim/nvim-lspconfig",
+        enabled = false,
         config = function()
             require "plugins.configs.lspconfig"
             require "custom.configs.lspconfig"
         end,
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        enabled = false,
     },
     {
         "williamboman/mason.nvim",
@@ -58,6 +66,9 @@ local plugins = {
                 "codelldb",
             }
         }
+    },
+    {
+        import = "custom.configs.coc"
     }
 }
 return plugins

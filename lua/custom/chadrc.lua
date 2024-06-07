@@ -8,6 +8,19 @@ M.ui = {
 
 M.plugins = "custom.plugins"
 M.mappings = require("custom.mappings")
+vim.cmd([[
+augroup _tiger
+autocmd!
+autocmd BufRead,BufEnter *.tig set filetype=tiger
+autocmd BufRead,BufEnter *.tih set filetype=tiger
+autocmd BufRead,BufEnter *.ll set filetype=lex
+augroup end
+]])
+
+vim.cmd([[
+hi Visual guibg=#47455D
+hi @comment guifg=#787878
+]])
 
 -- Vim options {{{
 vim.o.incsearch = true
@@ -23,17 +36,20 @@ vim.o.ts = 4
 vim.o.expandtab = true
 vim.o.smarttab = true
 vim.o.autoindent = true
+vim.o.smartindent = true
 vim.o.cindent = true
 vim.o.wrap = false
 vim.o.foldenable = true
 vim.o.foldmethod = "marker"
 vim.o.hidden = true
 vim.o.undofile = false
+vim.lsp.set_log_level("debug")
 -- }}}
 
 -- Vim script {{{
 vim.cmd([[
 autocmd Filetype c setlocal foldmethod=syntax | set fdl=99
+autocmd Filetype make setlocal noexpandtab
 ]])
 -- }}}
 

@@ -17,11 +17,6 @@ autocmd BufRead,BufEnter *.ll set filetype=lex
 augroup end
 ]])
 
-vim.cmd([[
-hi Visual guibg=#47455D
-hi @comment guifg=#787878
-]])
-
 -- Vim options {{{
 vim.o.incsearch = true
 vim.o.smartcase = true

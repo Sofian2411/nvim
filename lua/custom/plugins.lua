@@ -18,10 +18,10 @@ local plugins = {
             end
         end
     },
-    {
-        "github/copilot.vim",
-        event = "VeryLazy",
-    },
+    -- {
+    --     "github/copilot.vim",
+    --     enabled = false;
+    -- },
     {
         "jay-babu/mason-nvim-dap.nvim",
         event = "VeryLazy",

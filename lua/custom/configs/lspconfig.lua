@@ -13,3 +13,4 @@ lspconfig.clangd.setup {
 }
 
 require'lspconfig'.cmake.setup{}
+require'lspconfig'.pyright.setup{}

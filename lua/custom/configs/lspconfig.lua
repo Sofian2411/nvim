@@ -13,4 +13,18 @@ lspconfig.clangd.setup {
 }
 
 require'lspconfig'.cmake.setup{}
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pyright.setup{
+    on_attach = function(client, bufnr)
+        client.server_capabilities.signatureHelpProvider = false
+        on_attach(client, bufnr)
+    end,
+    capabilities = capabilities,
+}
+
+require'lspconfig'.rust_analyzer.setup{
+    on_attach = function(client, bufnr)
+        client.server_capabilities.signatureHelpProvider = false
+        on_attach(client, bufnr)
+    end,
+    capabilities = capabilities,
+}

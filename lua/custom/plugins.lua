@@ -18,10 +18,18 @@ local plugins = {
             end
         end
     },
-    -- {
-    --     "github/copilot.vim",
-    --     enabled = false;
-    -- },
+    {
+        "github/copilot.vim",
+        lazy = false,
+        enabled = false,
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        lazy = false,
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+        ft = { "markdown" },
+    },
     {
         "jay-babu/mason-nvim-dap.nvim",
         event = "VeryLazy",
@@ -69,7 +77,19 @@ local plugins = {
         }
     },
     -- {
-    --     import = "custom.configs.coc"
-    -- }
+    --     "folke/noice.nvim",
+    --     event = "VeryLazy",
+    --     opts = {
+    --         -- add any options here
+    --     },
+    --     dependencies = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "MunifTanjim/nui.nvim",
+    --         -- OPTIONAL:
+    --         --   `nvim-notify` is only needed, if you want to use the notification view.
+    --         --   If not available, we use `mini` as the fallback
+    --         "rcarriga/nvim-notify",
+    --     }
+    -- },
 }
 return plugins

@@ -38,7 +38,7 @@ vim.o.foldenable = true
 vim.o.foldmethod = "marker"
 vim.o.hidden = true
 vim.o.undofile = false
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("off")
 -- }}}
 
 -- Vim script {{{
